@@ -1,3 +1,4 @@
+// Question: What is the Fibonacci number at a given one-based position?
 package Loop;
 
 import java.util.Scanner;
@@ -14,12 +15,17 @@ import java.util.Scanner;
 //            v = f+s;
 
 public class Fibonacci {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.print("Enter a position interger n : ");
         int n = s.nextInt();
 
-        int result = 0 ;
+        if (n < 1) {
+            System.out.println("Position must be at least 1.");
+            return;
+        }
+
+        int result = 1;
         int v1 = 1;
         int v2 = 1;
 
@@ -28,7 +34,7 @@ public class Fibonacci {
             v1 = v2;
             v2 = result;
         }
-        System.out.println("result = " + (result==0? 1 : result));
+        System.out.println("result = " + result);
 
     }
 }
